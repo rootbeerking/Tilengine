@@ -29,7 +29,7 @@ TLN_SetBGColorFromTilemap (tilemap);
 ```
 
 ### Bitmap background
-To set a bitmap, there is the function \ref TLN_SetBGBitmap that takes the \ref TLN_Bitmap reference of a loaded bitmap. To see how to load an manipulate bitmaps, please refer to [Bitmaps section](bitmaps.md). For now, to load a bitmap called "Background.png" and set it as the background, you have to do the following:
+To set a bitmap, there is the function \ref TLN_SetBGBitmap that takes the \ref TLN_Bitmap reference of a loaded bitmap. To see how to load and manipulate bitmaps, please refer to [Bitmaps section](bitmaps.md). For now, to load a bitmap called "Background.png" and set it as the background, you have to do the following:
 ```c
 TLN_Bitmap background = TLN_LoadBitmap ("Background.png");
 TLN_SetBGBitmap (background);
@@ -47,13 +47,13 @@ TLN_DisableBGColor ()
 ```
 
 ## Setting the assets path
-By default tilengine loads all graphic assets in the same directory where the executable is. If you want to set your assets in a structured tree of folders -which is recommended-, you can set it with the \ref TLN_SetLoadPath function. It accepts relative or absolute paths, and interprets slash and backslash as path separator on any platform. For example:
+By default Tilengine loads all graphic assets in the same directory where the executable is. If you want to set your assets in a structured tree of folders -which is recommended-, you can set it with the \ref TLN_SetLoadPath function. It accepts relative or absolute paths, and interprets slash and backslash as path separator on any platform. For example:
 ```c
 TLN_SetLoadPath ("./assets/level1");
 ```
 
 ## Error handling
-Most functions in tilengine return either a reference to a requested object, or a boolean value signaling if the operation was successful or not. When an operation fails you can get an specific error code with the \ref TLN_GetLastError, whereas the \ref TLN_GetErrorString returns a string with a description about the requested error code:
+Most functions in Tilengine return either a reference to a requested object, or a boolean value signaling if the operation was successful or not. When an operation fails you can get an specific error code with the \ref TLN_GetLastError, whereas the \ref TLN_GetErrorString returns a string with a description about the requested error code:
 ```c
 int error = TLN_GetLastError ();
 char* description = TLN_GetErrorString (error);
@@ -86,7 +86,7 @@ TLN_SetLayer (0, NULL, NULL);
 ```
 
 ## Cleanup
-Once done, you should explicitly close tilengine to release memory and resources:
+Once done, you should explicitly close Tilengine to release memory and resources:
 ```c
 TLN_Deinit ();
 ```
