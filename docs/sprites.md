@@ -18,7 +18,7 @@ TLN_Spriteset spriteset = TLN_LoadSpriteset ("FireLeo.png");
 TLN_SetSpriteSet (0, spriteset);
 ```
 
-Now the sprite is displayed at position 0,0 by default (top-left corner) with the first graphic inside the spriteset. Each graphic inside a spriteset has a unique index, starting from 0, and an unique name. To change the graphic show, call \ref TLN_SetSpritePicture passing the sprite index and the graphic index inside the spriteset, starting with 0. For example to set sprite 0 with the 4th graphic inside the spriteset:
+Now the sprite is displayed at position 0,0 by default (top-left corner) with the first graphic inside the spriteset. Each graphic inside a spriteset has a unique index, starting from 0, and an unique name. To change the graphic shown, call \ref TLN_SetSpritePicture passing the sprite index and the graphic index inside the spriteset, starting with 0. For example to set sprite 0 with the 4th graphic inside the spriteset:
 
 ```c
 TLN_SetSpritePicture (0, 3);
@@ -52,7 +52,7 @@ TLN_SetSpritePivot (3, 0.5f, 1.0f);
 * right image: pivot at 0.5, 1.0
 
 ## Moving around
-To move the sprite to a different location, call the \ref TLN_SetSpritePosition, passing the sprite index, and the x,y coordinates. These values are absolute screen coordinates. For example to move sprite 3 to 160,120:
+To move a sprite to a different location, call the \ref TLN_SetSpritePosition, passing the sprite index, and the x,y coordinates. These values are absolute screen coordinates. For example to move sprite 3 to 160,120:
 ```c
 TLN_SetSpritePosition (3, 160,120);
 ```
@@ -113,7 +113,7 @@ To solve this, Tilengine implements pixel-based collision detection. With this f
 
 The final solution consists in combining both methods as they compliment each other: first determine coarse collision with bounding boxes, and then check per-pixel collision detection in those sprites.
 
-Per-pixel collision detection requires more CPU cycles that regular sprites, so it's an optional feature that is disabled by default. You can enable it for each sprite calling \ref TLN_EnableSpriteCollision passing the sprite index and a boolean value with *true* to enable or *false* to disable the feature. For example, to enable collision detection for sprite 0 and disable it for sprite 3:
+Per-pixel collision detection requires more CPU cycles than regular sprites, so it's an optional feature that is disabled by default. You can enable it for each sprite calling \ref TLN_EnableSpriteCollision passing the sprite index and a boolean value with *true* to enable or *false* to disable the feature. For example, to enable collision detection for sprite 0 and disable it for sprite 3:
 ```c
 TLN_EnableSpriteCollision (0, true);
 TLN_EnableSpriteCollision (3, false);
@@ -125,7 +125,7 @@ bool collision = TLN_GetSpriteCollision (0);
 
 ## Sprite drawing order
 
-By default, each sprite activated is added to the end of a list of sprites that are drawn from first to last, following [painter's algorithm](https://en.wikipedia.org/wiki/Painter%27s_algorithm). That means dat sprites added later will overlap the ones added first. For example if sprites 0, 1, 2, 3 are added in sequence:
+By default, each sprite activated is added to the end of a list of sprites that are drawn from first to last, following [painter's algorithm](https://en.wikipedia.org/wiki/Painter%27s_algorithm). That means that sprites added later will overlap the ones added first. For example if sprites 0, 1, 2, 3 are added in sequence:
 
 ```
 0 -> 1 -> 2 -> 3
