@@ -41,7 +41,7 @@ TLN_SetBGPalette (palette);
 ```
 
 ### Disabling background color
-To gain some performance, you may choose to disable a background color. Only do so if the last layer covers the entire screen without any transparent areas.:
+To gain some performance, you may choose to disable a background color. Only do so if the last layer covers the entire screen without any transparent areas:
 ```c
 TLN_DisableBGColor ()
 ```
